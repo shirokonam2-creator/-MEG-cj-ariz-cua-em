@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ARIZUOS AI</title>
+
+    <link
+        rel="stylesheet"
+        href="css/arizuos.css"
+    >
+</head>
+
+<body>
+
+    <!-- THANH TRÊN -->
+
+    <header class="topbar">
+
+        <button
+            class="top-btn"
+            onclick="goBack()"
+        >
+            ‹
+        </button>
+
+        <div class="title">
+
+            <div class="core">
+                A
+            </div>
+
+            <div>
+                <b>ARIZUOS</b>
+
+                <small>
+                    AI System Assistant
+                </small>
+            </div>
+
+        </div>
+
+        <button
+            class="top-btn"
+            onclick="showMenu()"
+        >
+            ⋮
+        </button>
+
+    </header>
+
+
+    <!-- KHU VỰC CHAT -->
+
+    <main class="chat">
+
+
+        <!-- NHÂN VẬT ARIZUOS -->
+
+        <section class="ai-stage">
+
+            <div class="glow"></div>
+
+
+            <div
+                class="character"
+                id="character"
+            >
+
+                <!--
+                    NHÂN VẬT ĐƯỢC VẼ
+                    HOÀN TOÀN BẰNG SVG
+                -->
+
+                <svg
+                    viewBox="0 0 320 430"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <!-- Aura -->
+
+                    <circle
+                        cx="160"
+                        cy="200"
+                        r="145"
+                        class="aura"
+                    />
+
+
+                    <!-- Tóc phía sau -->
+
+                    <path
+                        class="hairBack"
+                        d="
+                        M75 185
+                        Q45 70 160 45
+                        Q275 70 245 185
+                        L265 325
+                        Q225 365 198 320
+                        L160 365
+                        L122 320
+                        Q95 365 55 325
+                        Z
+                        "
+                    />
+
+
+                    <!-- Tai nghe -->
+
+                    <path
+                        class="headset"
+                        d="
+                        M72 170
+                        Q160 68 248 170
+                        "
+                    />
+
+                    <rect
+                        class="ear"
+                        x="60"
+                        y="150"
+                        width="34"
+                        height="76"
+                        rx="16"
+                    />
+
+                    <rect
+                        class="ear"
+                        x="226"
+                        y="150"
+                        width="34"
+                        height="76"
+                        rx="16"
+                    />
+
+                    <circle
+                        class="earLight"
+                        cx="77"
+                        cy="180"
+                        r="7"
+                    />
+
+                    <circle
+                        class="earLight"
+                        cx="243"
+                        cy="180"
+                        r="7"
+                    />
+
+
+                    <!-- Tóc -->
+
+                    <path
+                        class="hair"
+                        d="
+                        M78 180
+                        Q62 82 160 62
+                        Q258 82 242 180
+                        Q225 135 205 115
+                        Q185 98 160 104
+                        Q135 98 115 115
+                        Q95 135 78 180
+                        Z
+                        "
+                    />
+
+
+                    <!-- Khuôn mặt -->
+
+                    <path
+                        class="face"
+                        d="
+                        M105 150
+                        Q160 118 215 150
+                        L208 236
+                        Q194 285 160 298
+                        Q126 285 112 236
+                        Z
+                        "
+                    />
+
+
+                    <!-- Mái -->
+
+                    <path
+                        class="bang"
+                        d="
+                        M90 153
+                        Q112 92 160 90
+                        Q208 92 230 153
+                        Q201 132 181 148
+                        L160 110
+                        L139 148
+                        Q119 132 90 153
+                        Z
+                        "
+                    />
+
+
+                    <!-- Mắt -->
+
+                    <ellipse
+                        class="eye"
+                        cx="135"
+                        cy="193"
+                        rx="16"
+                        ry="22"
+                    />
+
+                    <ellipse
+                        class="eye"
+                        cx="185"
+                        cy="193"
+                        rx="16"
+                        ry="22"
+                    />
+
+
+                    <!-- Đồng tử phát sáng -->
+
+                    <circle
+                        class="pupil"
+                        cx="135"
+                        cy="193"
+                        r="6"
+                    />
+
+                    <circle
+                        class="pupil"
+                        cx="185"
+                        cy="193"
+                        r="6"
+                    />
+
+
+                    <!-- Điểm sáng mắt -->
+
+                    <circle
+                        cx="130"
+                        cy="186"
+                        r="3"
+                        fill="white"
+                    />
+
+                    <circle
+                        cx="180"
+                        cy="186"
+                        r="3"
+                        fill="white"
+                    />
+
+
+                    <!-- Miệng -->
+
+                    <path
+                        class="mouth"
+                        d="
+                        M151 229
+                        Q160 237 169 229
+                        "
+                    />
+
+
+                    <!-- Kẹp tóc -->
+
+                    <path
+                        class="clip"
+                        d="
+                        M181 119
+                        L211 104
+                        L203 127
+                        L175 138
+                        Z
+                        "
+                    />
+
+                    <text
+                        x="190"
+                        y="123"
+                        class="clipText"
+                    >
+                        A
+                    </text>
+
+
+                    <!-- Cổ -->
+
+                    <path
+                        class="neck"
+                        d="
+                        M140 282
+                        V315
+                        H180
+                        V282
+                        "
+                    />
+
+
+                    <!-- Áo -->
+
+                    <path
+                        class="body"
+                        d="
+                        M140 303
+                        Q112 309 86 337
+                        L62 417
+                        H258
+                        L234 337
+                        Q208 309 180 303
+                        L160 329
+                        Z
+                        "
+                    />
+
+
+                    <!-- Cổ áo -->
+
+                    <path
+                        class="collar"
+                        d="
+                        M132 302
+                        L160 329
+                        L188 302
+                        L180 343
+                        H140
+                        Z
+                        "
+                    />
+
+
+                    <!-- Tay áo -->
+
+                    <path
+                        class="sleeve"
+                        d="
+                        M92 337
+                        Q64 346 56 397
+                        L91 405
+                        L110 348
+                        Z
+                        "
+                    />
+
+                    <path
+                        class="sleeve"
+                        d="
+                        M228 337
+                        Q256 346 264 397
+                        L229 405
+                        L210 348
+                        Z
+                        "
+                    />
+
+
+                    <!-- Logo -->
+
+                    <path
+                        class="logo"
+                        d="
+                        M160 346
+                        L174 369
+                        H146
+                        Z
+                        "
+                    />
+
+                    <text
+                        x="160"
+                        y="394"
+                        text-anchor="middle"
+                        class="logoText"
+                    >
+                        ARIZUOS
+                    </text>
+
+                </svg>
+
+            </div>
+
+
+            <!-- Trạng thái -->
+
+            <div
+                class="status"
+                id="status"
+            >
+
+                <i></i>
+
+                ARIZUOS đang hoạt động
+
+            </div>
+
+        </section>
+
+
+        <!-- GIỚI THIỆU -->
+
+        <div class="welcome">
+
+            <h2>
+                Xin chào! 👋
+            </h2>
+
+            <p>
+                Mình là
+                <b>ARIZUOS</b>,
+                AI hệ thống của ArizuOS.
+            </p>
+
+            <small>
+                Mình có thể hỗ trợ bạn
+                sử dụng và quản lý ArizuOS.
+            </small>
+
+        </div>
+
+
+        <!-- TIN NHẮN -->
+
+        <div
+            id="messages"
+            class="messages"
+        ></div>
+
+
+        <!-- CÂU HỎI NHANH -->
+
+        <div class="suggestions">
+
+            <button
+                onclick="quickAsk('Kiểm tra hệ thống')"
+            >
+                ⚙️ Hệ thống
+            </button>
+
+            <button
+                onclick="quickAsk('Kiểm tra RAM')"
+            >
+                💾 RAM
+            </button>
+
+            <button
+                onclick="quickAsk('Backup dữ liệu')"
+            >
+                📦 Backup
+            </button>
+
+            <button
+                onclick="quickAsk('Game Mode')"
+            >
+                🎮 Game Mode
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- Ô NHẬP -->
+
+    <div class="input">
+
+        <button
+            onclick="showToast('Tệp đang phát triển 📎')"
+        >
+            ＋
+        </button>
+
+        <input
+            id="messageInput"
+            type="text"
+            placeholder="Hỏi ARIZUOS..."
+            autocomplete="off"
+        >
+
+        <button
+            onclick="sendMessage()"
+        >
+            ➤
+        </button>
+
+    </div>
+
+
+    <div id="toast"></div>
+
+
+    <script src="js/arizuos.js"></script>
+
+</body>
+</html>

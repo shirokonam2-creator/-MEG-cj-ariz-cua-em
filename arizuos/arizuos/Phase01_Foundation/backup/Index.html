@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ArizuOS Backup</title>
+
+    <link
+        rel="stylesheet"
+        href="css/backup.css"
+    >
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <button
+        class="top-btn"
+        onclick="goBack()"
+    >
+        ‹
+    </button>
+
+    <div class="title">
+        <div class="backup-icon">
+            ⟳
+        </div>
+
+        <div>
+            <b>BACKUP</b>
+            <small>ArizuOS Data Protection</small>
+        </div>
+    </div>
+
+    <button
+        class="top-btn"
+        onclick="showInfo()"
+    >
+        ⓘ
+    </button>
+
+</header>
+
+
+<main class="content">
+
+    <section class="hero">
+
+        <div class="backup-circle">
+            <div class="backup-symbol">
+                ☁
+            </div>
+
+            <div class="backup-check">
+                ✓
+            </div>
+        </div>
+
+        <h1>
+            Sao lưu dữ liệu
+        </h1>
+
+        <p>
+            Bảo vệ dữ liệu của bạn
+            trước khi thay đổi hệ thống.
+        </p>
+
+    </section>
+
+
+    <section class="status-card">
+
+        <div>
+            <span class="status-dot"></span>
+
+            <b>
+                Bảo vệ dữ liệu đang bật
+            </b>
+        </div>
+
+        <small>
+            ArizuOS không tự động xóa dữ liệu gốc.
+        </small>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>
+            Dữ liệu sao lưu
+        </h2>
+
+        <label class="item">
+            <span>🖼️ Ảnh</span>
+
+            <input
+                type="checkbox"
+                id="photos"
+                checked
+            >
+
+        </label>
+
+
+        <label class="item">
+            <span>🎬 Video</span>
+
+            <input
+                type="checkbox"
+                id="videos"
+                checked
+            >
+
+        </label>
+
+
+        <label class="item">
+            <span>📄 Tài liệu</span>
+
+            <input
+                type="checkbox"
+                id="documents"
+                checked
+            >
+
+        </label>
+
+
+        <label class="item">
+            <span>📁 Tệp cá nhân</span>
+
+            <input
+                type="checkbox"
+                id="files"
+                checked
+            >
+
+        </label>
+
+
+        <label class="item">
+            <span>⚙️ Cài đặt ArizuOS</span>
+
+            <input
+                type="checkbox"
+                id="settings"
+                checked
+            >
+
+        </label>
+
+
+        <label class="item">
+            <span>📦 Dữ liệu ứng dụng</span>
+
+            <input
+                type="checkbox"
+                id="appData"
+                checked
+            >
+
+        </label>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>
+            Vị trí lưu
+        </h2>
+
+        <div class="storage">
+
+            <div class="storage-icon">
+                💾
+            </div>
+
+            <div class="storage-info">
+
+                <b>
+                    Bộ nhớ trong
+                </b>
+
+                <small>
+                    ArizuOS_Backups/
+                </small>
+
+            </div>
+
+            <button
+                onclick="changeStorage()"
+            >
+                Đổi
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <button
+        class="backup-button"
+        onclick="startBackup()"
+    >
+        <span>⟳</span>
+        Tạo bản sao lưu
+    </button>
+
+
+    <button
+        class="manager-button"
+        onclick="openManager()"
+    >
+        📦 Quản lý bản sao lưu
+    </button>
+
+</main>
+
+
+<div
+    id="progress"
+    class="progress"
+>
+
+    <div class="progress-box">
+
+        <div class="loader">
+            ⟳
+        </div>
+
+        <h2>
+            Đang tạo backup
+        </h2>
+
+        <p id="progressText">
+            Chuẩn bị dữ liệu...
+        </p>
+
+        <div class="progress-bar">
+            <div
+                id="progressFill"
+            ></div>
+        </div>
+
+        <b id="progressPercent">
+            0%
+        </b>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+
+<script src="js/backup.js"></script>
+
+</body>
+</html>

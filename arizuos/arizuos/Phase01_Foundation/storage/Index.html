@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ArizuOS Storage</title>
+
+    <link rel="stylesheet" href="storage.css">
+</head>
+
+<body>
+
+    <div class="storage-app">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="icon-btn" id="backBtn">‹</button>
+
+                <div>
+                    <h1>Storage</h1>
+                    <p>ArizuOS File Storage</p>
+                </div>
+            </div>
+
+            <button class="icon-btn" id="menuBtn">⋮</button>
+        </header>
+
+
+        <!-- STORAGE CARD -->
+        <section class="storage-card">
+
+            <div class="storage-icon">
+                💾
+            </div>
+
+            <div class="storage-info">
+                <h2>ArizuOS Storage</h2>
+
+                <p>
+                    <span id="usedText">0 MB</span>
+                    /
+                    <span id="totalText">32 GB</span>
+                </p>
+            </div>
+
+            <div class="storage-progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <p class="storage-percent" id="percentText">
+                0% đã sử dụng
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Tìm kiếm tệp..."
+            >
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="actions">
+
+            <button class="action-btn" id="newFolderBtn">
+                <span>📁</span>
+                <small>Thư mục mới</small>
+            </button>
+
+            <button class="action-btn" id="refreshBtn">
+                <span>↻</span>
+                <small>Làm mới</small>
+            </button>
+
+        </section>
+
+
+        <!-- LOCATIONS -->
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Vị trí lưu trữ</h2>
+            </div>
+
+            <div class="location-list">
+
+                <button class="location-item">
+                    <span class="location-icon">🏠</span>
+
+                    <div>
+                        <strong>Bộ nhớ trong</strong>
+                        <p>ArizuOS Internal Storage</p>
+                    </div>
+
+                    <span>›</span>
+                </button>
+
+
+                <button class="location-item">
+                    <span class="location-icon">📥</span>
+
+                    <div>
+                        <strong>Downloads</strong>
+                        <p>Tệp đã tải xuống</p>
+                    </div>
+
+                    <span>›</span>
+                </button>
+
+
+                <button class="location-item">
+                    <span class="location-icon">🖼️</span>
+
+                    <div>
+                        <strong>Pictures</strong>
+                        <p>Hình ảnh</p>
+                    </div>
+
+                    <span>›</span>
+                </button>
+
+
+                <button class="location-item">
+                    <span class="location-icon">🎵</span>
+
+                    <div>
+                        <strong>Music</strong>
+                        <p>Âm thanh</p>
+                    </div>
+
+                    <span>›</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILES -->
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Tệp gần đây</h2>
+
+                <button id="clearBtn">
+                    Xóa tất cả
+                </button>
+            </div>
+
+            <div id="fileList" class="file-list">
+                <!-- JavaScript tạo file ở đây -->
+            </div>
+
+        </section>
+
+
+        <!-- EMPTY STATE -->
+        <div id="emptyState" class="empty-state">
+
+            <div>📂</div>
+
+            <h3>Chưa có tệp</h3>
+
+            <p>
+                Tạo thư mục hoặc thêm tệp để bắt đầu.
+            </p>
+
+        </div>
+
+
+        <!-- ADD FILE -->
+        <button
+            class="floating-btn"
+            id="addFileBtn"
+            title="Thêm tệp"
+        >
+            +
+        </button>
+
+
+        <!-- FILE INPUT -->
+        <input
+            type="file"
+            id="fileInput"
+            hidden
+            multiple
+        >
+
+    </div>
+
+
+    <!-- NEW FOLDER MODAL -->
+    <div id="folderModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>Tạo thư mục</h2>
+
+            <p>Nhập tên thư mục mới:</p>
+
+            <input
+                type="text"
+                id="folderName"
+                placeholder="Ví dụ: Hình ảnh"
+            >
+
+            <div class="modal-actions">
+
+                <button id="cancelFolder">
+                    Hủy
+                </button>
+
+                <button id="createFolder">
+                    Tạo
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="storage.js"></script>
+
+</body>
+</html>

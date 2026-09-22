@@ -1,0 +1,33 @@
+{
+  "backup_settings": {
+    "auto_backup": false,
+    "backup_frequency": "weekly",
+
+    "data_selection": {
+      "photos": true,
+      "videos": true,
+      "documents": true,
+      "personal_files": true,
+      "app_data": true,
+      "arizuos_settings": true
+    },
+
+    "storage": {
+      "location": "internal_storage",
+      "folder_name": "ArizuOS_Backups"
+    },
+
+    "backup_name": {
+      "format": "ArizuOS_Backup_DATE_TIME"
+    },
+
+    "safety": {
+      "keep_original_data": true,
+      "delete_original_data": false,
+      "confirm_before_restore": true,
+      "confirm_before_delete_backup": true
+    },
+
+    "status": "development"
+  }
+}

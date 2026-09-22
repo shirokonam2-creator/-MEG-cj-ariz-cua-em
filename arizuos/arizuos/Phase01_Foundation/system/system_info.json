@@ -1,0 +1,7 @@
+{
+  "name": "ArizuOS",
+  "version": "0.1.0",
+  "base": "Android 11",
+  "device": "vivo V2026",
+  "status": "development"
+}

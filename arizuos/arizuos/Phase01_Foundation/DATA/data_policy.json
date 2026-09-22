@@ -1,0 +1,16 @@
+{
+  "name": "ArizuOS Data Preservation",
+  "version": "1.0",
+
+  "preserve_user_data": true,
+  "auto_delete_app_data": false,
+  "auto_delete_user_files": false,
+  "auto_clear_cache": false,
+  "auto_delete_photos": false,
+  "auto_delete_videos": false,
+
+  "backup_before_system_change": true,
+  "require_user_confirmation_before_delete": true,
+
+  "status": "development"
+}

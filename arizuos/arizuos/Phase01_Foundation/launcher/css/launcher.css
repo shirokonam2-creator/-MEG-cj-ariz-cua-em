@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(75, 145, 210, 0.18),
+            rgba(30, 80, 150, 0.28)
+        ),
+        url("../assets/wallpapers/arizuos_wallpaper.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* =========================
+   GLASS
+========================= */
+
+.glass {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.18),
+        inset 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.status-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 34px;
+    padding: 7px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    background: rgba(30, 80, 130, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+.status-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+
+    padding: 48px 16px 110px;
+}
+
+/* =========================
+   CLOCK
+========================= */
+
+.clock-widget {
+    padding: 18px;
+    border-radius: 25px;
+    margin-bottom: 14px;
+}
+
+#clock {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#date {
+    margin-top: 3px;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.weather {
+    margin-top: 13px;
+    font-size: 15px;
+}
+
+.weather small {
+    opacity: 0.8;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 10px 4px 15px;
+}
+
+.logo-cat {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    font-size: 24px;
+
+    box-shadow: 0 0 20px rgba(150, 220, 255, 0.4);
+}
+
+.logo h1 {
+    font-size: 25px;
+}
+
+.logo p {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+    margin-bottom: 15px;
+
+    border-radius: 28px;
+}
+
+.google {
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 15px;
+}
+
+.search input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search button {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 19px;
+}
+
+/* =========================
+   ARIZUOS AI
+========================= */
+
+.ai-widget {
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+
+    border-radius: 25px;
+    margin-bottom: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.ai-widget:active {
+    transform: scale(0.97);
+}
+
+.ai-avatar {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 19px;
+
+    background: rgba(170, 230, 255, 0.28);
+
+    font-size: 27px;
+
+    box-shadow:
+        0 0 20px rgba(130, 220, 255, 0.45);
+}
+
+.ai-info {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.ai-info h2 {
+    font-size: 17px;
+}
+
+.ai-info p {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.ai-info small {
+    display: block;
+    margin-top: 5px;
+    opacity: 0.75;
+    font-size: 11px;
+}
+
+.arrow {
+    font-size: 28px;
+    opacity: 0.7;
+}
+
+/* =========================
+   RESOURCE
+========================= */
+
+.resource-widget {
+    padding: 15px;
+
+    border-radius: 25px;
+    margin-bottom: 17px;
+}
+
+.resource {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 13px;
+}
+
+.resource:last-child {
+    margin-bottom: 0;
+}
+
+.resource > span {
+    width: 30px;
+    font-size: 20px;
+}
+
+.resource b {
+    font-size: 13px;
+}
+
+.resource p {
+    margin-top: 2px;
+    font-size: 11px;
+    opacity: 0.75;
+}
+
+.progress {
+    width: 210px;
+    max-width: 52vw;
+
+    height: 5px;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.progress i {
+    display: block;
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================
+   APPS
+========================= */
+
+.apps {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 15px 8px;
+}
+
+.app {
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+}
